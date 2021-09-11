@@ -46,12 +46,21 @@ use Illuminate\Support\Facades\Session;
                                 </div>
                             </div>
 
+                                 @error('title')
+                                 <p class="alert alert-danger">{{$message}}</p>
+                                 @enderror
+
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Category image</label>
                                 <div class="col-lg-10">
                                     <input type="file" name="image" class="form-control" />
                                 </div>
                             </div>
+
+                                @error('image')
+                                <p class="alert alert-danger">{{$message}}</p>
+                                @enderror
+
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Category description</label>
                                 <div class="col-lg-10">
@@ -59,6 +68,10 @@ use Illuminate\Support\Facades\Session;
                                 </div>
                             </div>
 
+
+                                @error('desc')
+                                <p class="alert alert-danger">{{$message}}</p>
+                                @enderror
 
 
                             <div class="form-group">
