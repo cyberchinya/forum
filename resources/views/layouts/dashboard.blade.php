@@ -75,6 +75,12 @@
                       </a>
           </li>
 
+            <li>
+                <a class="" href="{{route('categories')}}">
+                    <i class="fa fa-list"></i>
+                    <span>Categories</span>
+                </a>
+            </li>
 
 
 

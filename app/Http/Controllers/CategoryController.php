@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Session;
 
 
 class CategoryController extends Controller
@@ -16,7 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::latest()->paginate(20);
+
+        return view('admin.pages.categories', \compact('categories'));
     }
 
     /**
@@ -42,12 +44,20 @@ class CategoryController extends Controller
             'image'=>'required',
             'desc'=>'required'
         ]);
+        $image = $request->image;
+        $name = $image->getClientOriginalName();
+        $new_name = time().$name;
+        $dir = "storage/images/categories";
+        $image->move($dir, $new_name);
+
         $category = new Category;
         $category->title = $request->title;
         $category->desc = $request->desc;
         $category->user_id = auth()->id();
-        $category->image = "jkkljkljkljkljlkjlkjklj";
+        $category->image = $new_name;
         $category->save();
+        Session::flash('message', 'category Created Successfully');
+        Session::flash('alert-class', 'alert-success');
         return back();
     }
 
