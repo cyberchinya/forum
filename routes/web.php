@@ -32,3 +32,6 @@ Route::get('/topic', function () {
 });
 
 route::get('dashboard/home', 'App\Http\Controllers\DashboardController@home');
+
+Route::get('dashboard/category/new', 'App\Http\Controllers\CategoryController@create')->name('category.new');
+Route::post('dashboard/category/new', 'App\Http\Controllers\CategoryController@store')->name('category.store');
