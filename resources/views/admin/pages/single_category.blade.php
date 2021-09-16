@@ -31,11 +31,29 @@
                         <div class="panel-body">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-lg-3">
-                                        <h4>{{$category->title}}</h4>
-                                        <img src="{{asset('storage/images/categories/'.$category->image)}}" width="100" height="100" alt="Category Image">
-                                        <p>{!! $category->desc !!}</p>
-                                    </div>
+                                    <div class="col-lg-8 offset-2 bg-dark">
+
+                                        <div class="card">
+                                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                                <img
+                                                    src="{{asset('storage/images/categories/'.$category->image)}}"
+                                                    class="img-fluid" height="200" width="300"
+                                                />
+                                                <a href="#!">
+                                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                                </a>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{$category->title}}</h5>
+                                                <p class="card-text">
+                                                    {!! $category->desc !!}
+                                                </p>
+                                               {{-- <a href="#" class="btn btn-primary">Button</a>--}}
+                                            </div>
+                                        </div>
+
+
+                                   </div>
                                 </div>
                             </div>
                         </div>
@@ -45,15 +63,8 @@
                 </div>
 
             </div>
-            <!--/col-->
-
-            </div>
-
-
 
         </section>
-
-
     </section>
     <!--main content end-->
 @endsection

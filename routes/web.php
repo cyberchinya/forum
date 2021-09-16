@@ -37,3 +37,8 @@ Route::get('dashboard/category/new', 'App\Http\Controllers\CategoryController@cr
 Route::post('dashboard/category/new', 'App\Http\Controllers\CategoryController@store')->name('category.store');
 Route::get('dashboard/categories', 'App\Http\Controllers\CategoryController@index')->name('categories');
 Route::get('dashboard/categories/{id}', 'App\Http\Controllers\CategoryController@show')->name('category');
+
+// CRUD
+Route::get('dashboard/categories/edit/{id}', 'App\Http\Controllers\CategoryController@edit')->name('category.edit');
+Route::post('dashboard/categories/edit/{id}', 'App\Http\Controllers\CategoryController@update')->name('category.update');
+Route::get('dashboard/categories/delete/{id}', 'App\Http\Controllers\CategoryController@destroy')->name('category.destroy');

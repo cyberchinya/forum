@@ -49,8 +49,8 @@
                                             <td>Image</td>
                                             <td>{!!$category->desc!!}</td>
                                             <td><a href="{{route('category',$category->id)}}"><i class="fa fa-eye text-success"></i></a></td>
-                                            <td><a href="#"><i class="fa fa-edit text-info"></i></a></td>
-                                            <td><a href="#" class="text-danger"><i class="fa fa-trash"></i>Delete</a></td>
+                                            <td><a href="{{route('category.update',$category->id)}}"><i class="fa fa-edit text-info"></i></a></td>
+                                            <td><a href="{{route('category.destroy',$category->id)}}" class="text-danger"><i class="fa fa-trash"></i>Delete</a></td>
 
                                         </tr>
                                     @endforeach
