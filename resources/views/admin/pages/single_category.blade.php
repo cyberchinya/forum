@@ -29,36 +29,15 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <table class="table bootstrap-datatable countries">
-                                <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Image</th>
-                                    <th>Description</th>
-                                    <th>View</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @if (count($categories)> 0)
-                                    @foreach ($categories as $category)
-                                        <tr>
-                                            <td>{{$category->title}}</td>
-                                            <td>Image</td>
-                                            <td>{!!$category->desc!!}</td>
-                                            <td><a href="{{route('category',$category->id)}}"><i class="fa fa-eye text-success"></i></a></td>
-                                            <td><a href="#"><i class="fa fa-edit text-info"></i></a></td>
-                                            <td><a href="#" class="text-danger"><i class="fa fa-trash"></i>Delete</a></td>
-
-                                        </tr>
-                                    @endforeach
-                                @endif
-                                </tbody>
-                            </table>
-
-                            {{ $categories->links() }}
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <h4>{{$category->title}}</h4>
+                                        <img src="{{asset('storage/images/categories/'.$category->image)}}" width="100" height="100" alt="Category Image">
+                                        <p>{!! $category->desc !!}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
