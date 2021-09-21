@@ -42,3 +42,7 @@ Route::get('dashboard/categories/{id}', 'App\Http\Controllers\CategoryController
 Route::get('dashboard/categories/edit/{id}', 'App\Http\Controllers\CategoryController@edit')->name('category.edit');
 Route::post('dashboard/categories/edit/{id}', 'App\Http\Controllers\CategoryController@update')->name('category.update');
 Route::get('dashboard/categories/delete/{id}', 'App\Http\Controllers\CategoryController@destroy')->name('category.destroy');
+// Forum
+Route::get('dashboard/forum/new', 'App\Http\Controllers\ForumController@create')->name('forum.new');
+Route::post('dashboard/forum/new', 'App\Http\Controllers\ForumController@store')->name('forum.store');
+Route::get('dashboard/forums', 'App\Http\Controllers\ForumController@index')->name('forums');
